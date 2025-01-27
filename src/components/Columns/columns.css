@@ -1,3 +1,134 @@
-.columns {
-
+:root {
+  --bg-primary: #845ec2;
+  --bg-secondary: #00c9a7;
+  --bg-accent: #ba3caf;
+  --bg-light: #F0F0F2;
+  --bg-dark: #4b4453;
+  --bg-white: #ffffff;
+  --width-wide: 1440px;
+  --width-contained: 1100px;
+  --width-narrow: 960px;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.bg-primary {
+  background-color: #845ec2;
+}
+
+.bg-secondary {
+  background-color: #00c9a7;
+}
+
+.bg-accent {
+  background-color: #ba3caf;
+}
+
+.bg-light {
+  background-color: #F0F0F2;
+}
+
+.bg-dark {
+  background-color: #4b4453;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.columns {
+  display: grid;
+  grid-gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+}
+@container (min-width: 960px) {
+  .columns {
+    grid-gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+}
+.columns:has(.columns__column--has-own-width) {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+@container (min-width: 960px) {
+  .columns:has(.columns__column--has-own-width) {
+    gap: var(--spacing-md);
+  }
+}
+.columns--1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.columns--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.columns--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.columns--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.columns--5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.columns--6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+.columns--7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+.columns--8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+.columns--9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+.columns--10 {
+  grid-template-columns: repeat(10, 1fr);
+}
+.columns--11 {
+  grid-template-columns: repeat(11, 1fr);
+}
+.columns--12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+.columns--halign-start {
+  justify-content: flex-start;
+}
+.columns--halign-center {
+  justify-content: center;
+}
+.columns--halign-end {
+  justify-content: flex-end;
+}
+.columns__column:not(.columns__column--has-own-width) {
+  flex-grow: 1;
+}
+.columns__column--has-own-width {
+  grid-column: span 1;
+  min-width: 0;
+}
+.columns__column--valign-start {
+  align-self: flex-start;
+}
+.columns__column--valign-center {
+  align-self: center;
+}
+.columns__column--valign-end {
+  align-self: flex-end;
+}
+
+/*# sourceMappingURL=columns.css.map */
